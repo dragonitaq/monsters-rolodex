@@ -81,3 +81,9 @@ In another word, the `this` keyword in the onClick should reference the button i
 ---
 
 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+The use of passing a function to setState will wait for any previous setState calls to resolve before passing the state object in the parameters of the function to the actual function definition. This way you are ensured that the state object you use is the most up to date one. This is relevant only if you need to make sure you have the latest state before updating as setState is an asynchronous call! Generally speaking it's okay to use setState with just an object, but in cases where you absolutely need the latest version of the state around race conditions, then use a function.
+
+---
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
